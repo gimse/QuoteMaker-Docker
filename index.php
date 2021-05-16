@@ -2,19 +2,18 @@
 require "./vendor/autoload.php";
 use masokky\QuoteMaker;
 try{
-  $text = "the cruelest crime is giving false hope without love";
   if (getenv("UNSPLASH_KEY") == true){
     (new QuoteMaker)
       ->setBackgroundFromUnsplash([getenv("UNSPLASH_KEY"),"random"])
-      ->quoteText($text)
-      ->watermarkText("Mas Okky")
+      ->quoteText($_GET["text"])
+      ->watermarkText($_GET["watermarkText"])
       ->toFile("result.jpg");
   }
   else{
     (new QuoteMaker)
       ->setBackground("yada.jpeg")
-      ->quoteText($text)
-      ->watermarkText("Mas Okky")
+      ->quoteText($_GET["text"])
+      ->watermarkText($_GET["watermarkText"])
       ->toFile("result.jpg");
   }
 }catch(Exception $e){
