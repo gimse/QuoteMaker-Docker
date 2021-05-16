@@ -22,6 +22,10 @@ RUN apk add --no-cache \
       libpng-dev \
     && rm -rf /tmp/*
 
-    COPY ./ ./
+    COPY ./vendor ./vendor
+    COPY ./index.php ./
+    COPY ./yoda.jpeg ./
+    COPY ./composer.json ./
+    COPY ./composer.lock ./
     EXPOSE 8008
     CMD ["php","-S","0.0.0.0:8008"]
