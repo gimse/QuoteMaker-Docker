@@ -4,7 +4,7 @@ name: 'Docker image builder for quote-maker-simple'
 on:
     push:
         branches:
-            - main
+            - master
 
 permissions:
   packages: write
