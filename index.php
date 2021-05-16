@@ -11,7 +11,7 @@ try{
   }
   else{
     (new QuoteMaker)
-      ->setBackground("yada.jpeg")
+      ->setBackground("yoda.jpeg")
       ->quoteText($_GET["text"])
       ->watermarkText($_GET["watermarkText"])
       ->toFile("result.jpg");
