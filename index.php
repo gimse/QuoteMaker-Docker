@@ -7,6 +7,7 @@ try{
       ->setBackgroundFromUnsplash([getenv("UNSPLASH_KEY"),"random"])
       ->quoteText($_GET["text"])
       ->watermarkText($_GET["watermarkText"])
+      ->setQuoteFontSize(37)
       ->toFile("result.jpg");
   }
   else{
@@ -14,6 +15,7 @@ try{
       ->setBackground("yoda.jpeg")
       ->quoteText($_GET["text"])
       ->watermarkText($_GET["watermarkText"])
+      ->setQuoteFontSize(37)
       ->toFile("result.jpg");
   }
 }catch(Exception $e){
